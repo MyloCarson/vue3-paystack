@@ -71,6 +71,14 @@ export default /*#__PURE__*/defineComponent({
       type: String,
       default: "",
     },
+    plan: {
+      type: String,
+      default: ""
+    },
+    quantity: {
+      type: Number,
+      default: 1
+    }
  
   },
   async created() {
@@ -131,6 +139,16 @@ export default /*#__PURE__*/defineComponent({
         // plan: this.plan, //required for subscriptions
         // quantity: this.quantity,
       };
+
+      // for subscriptions
+      if(this.plan) {
+        paymentOptions[plan] = this.plan
+      }
+
+      // for subscriptions
+      if(this.quantity) {
+        paymentOptions[quantity] = this.quantity
+      }
 
       const paystack = new window.PaystackPop();
       paystack.newTransaction(paymentOptions);

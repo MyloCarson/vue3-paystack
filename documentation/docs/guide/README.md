@@ -104,6 +104,8 @@ export default {
 | `channels`             | `Array`    |                                                              | `function() { return ["card", "bank", "ussd", "qr", "mobile_money"]; }` |
 | `metadata`             | `Object`   |                                                              | `{   "custom_fields":[{"display_name":"Cart Items",  "variable_name":"Invoice ID", "value":209}] }`                                             |
 | `label`                | `String`   |                                                              | `""`                                                                    |
+| `plan`                 | `String`   | This makes payment become a subscription payment.           |                                                                         |
+| `quantity`             | `Number`   | Used to apply mutiple to the amount of the plan for a subscription|                                                                         |
 
 ## Metadata (optional)
 The metadata prop is a good way to add additional information to information stored in your records.
